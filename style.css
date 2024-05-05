@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: orange;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.slogan {
+    font-style: italic;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #ccc;
+    border-top: solid red 10px;
+}
+
+nav {
+    width: 25%;
+    background-color: black;
+    padding: 10px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    background: rgb(161, 161, 161);
+    color: black;
+    display: block;
+    padding: 20px 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+main {
+    width: 70%;
+    text-align: center;
+    vertical-align: top;
+    padding: 20px;
+    /*border: 2px solid red;*/
+}
+
+main img {
+    max-width: 100%;
+}
+
+
+@media screen and (max-width: 900px) {
+    .content {
+        display: flex;
+        margin-bottom: 80px
+    }
+
+    main {
+        width: 100%;
+    }
+
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        padding: 0px;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu li {
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+}

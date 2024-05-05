@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Restaurant</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Top Restaurant</h1>
+            <p class="slogan">Under the company Name</p>
+        </header>
+        <div class="content">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">WELCOME PAGE</a></li>
+                    <li><a href="#">BOOK TABLE</a></li>
+                    <li><a href="#">MENU LIST</a></li>
+                    <li><a href="menumate.html">MENU-MATE</a></li>
+                </ul>
+            </nav>
+            <main>
+                <h1>Upload Files</h1>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <h2>Upload Images (ZIP file)</h2>
+                    <input type="file" name="imageZipFile" id="imageZipFile">
+                    <br>
+                    <h2>Upload Excel File</h2>
+                    <input type="file" name="excelFile" id="excelFile">
+                    <br>
+                    <button type="submit">Upload</button>
+                </form>
+
+                <script>
+                    document.getElementById('uploadForm').addEventListener('submit', async function (event) {
+                        event.preventDefault();
+
+                        const formData = new FormData();
+                        formData.append('imageZipFile', document.getElementById('imageZipFile').files[0]);
+                        formData.append('excelFile', document.getElementById('excelFile').files[0]);
+
+                        try {
+                            const response = await fetch('/upload', {
+                                method: 'POST',
+                                body: formData
+                            });
+
+                            if (response.ok) {
+                                alert('Files uploaded successfully!');
+                            } else {
+                                alert('File upload failed!');
+                            }
+                        } catch (error) {
+                            console.error('Error uploading file:', error);
+                        }
+                    });
+                </script>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
