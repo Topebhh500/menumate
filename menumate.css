@@ -47,7 +47,7 @@
 }
 
 .foodimg {
-    width: 300px;
+    max-width: 300px;
     border-radius: 20px;
     border: solid black 2px;
     margin: 20px;
